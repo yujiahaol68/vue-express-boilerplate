@@ -20,7 +20,10 @@ let UserSchema = new Schema({
         required: true,
         unique: true
     },
-    rememberToken: String
+    rememberToken: String,
+    deleted_at: {
+        type: Date
+    }
 }, {
     timestamps: { createdAt: 'created_at', updatedAt: 'updated_at' }
 });
