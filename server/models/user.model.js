@@ -1,0 +1,1 @@
+let User = require('mongoose').model('User');

@@ -31,14 +31,14 @@ app.use(logger('dev'))
 
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use((req, res, next) => {
 	var err = new Error('Not Found');
 	err.status = 404;
 	next(err);
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use((err, req, res, next) => {
   // set locals, only providing error in development
 	res.locals.message = err.message;
 	res.locals.error = config.debug === true ? err : {};
@@ -49,7 +49,7 @@ app.use(function(err, req, res, next) {
 });
 
 
-app.listen(config.port, function(err) {
+app.listen(config.port, (err) => {
 	if(err) console.warn(err);
 	console.warn('Listening on http://localhost:' + config.port);
 });
