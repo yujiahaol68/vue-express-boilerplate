@@ -21,9 +21,19 @@ let UserSchema = new Schema({
         unique: true
     },
     rememberToken: String,
-    deleted_at: {
-        type: Date
+    deleted: {
+        type: Boolean,
+        default: false
+    },
+    is_admin: {
+        type: Boolean,
+        default: false
+    },
+    user_group: {
+        type: Number,
+        default: 1
     }
+
 }, {
     timestamps: { createdAt: 'created_at', updatedAt: 'updated_at' }
 });
